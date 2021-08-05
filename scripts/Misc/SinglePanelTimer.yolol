@@ -1,0 +1,12 @@
+IF :timerOn==0 THEN :Timer="off" GOTO1 ELSE s=0 m=0 h=0 END
+s++
+IF s>59 THEN s=0 m++ END IF m>59 THEN m=0 h++ END
+ts=s tm=m IF m<10 THEN tm="0"+m END IF s<10 THEN ts="0"+s END
+:Timer=h+"h "+tm+"h "+ts+"s"
+IF :timerOn THEN GOTO2 ELSE GOTO1 END
+
+
+// Requires 1 displays
+// The display should have field names :Timer
+// 1 button named :timerOn (type 1 for toggle)
+

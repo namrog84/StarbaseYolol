@@ -1,0 +1,11 @@
+IF :timerOn==0 THEN GOTO1 ELSE :Seconds=0 :Minutes=0 :Hours=0 END
+:Seconds+=1 IF :timerOn==0 THEN GOTO1 END
+IF :Seconds>59 THEN :Seconds=0 :Minutes++END
+IF :Minutes>59 THEN :Minutes=0 :Hours++END
+GOTO2
+
+
+// Requires 3 displays
+// Each display should have field names :Seconds, :Minutes,:Hours
+// 1 button named :timerOn (type 1 for toggle)
+
